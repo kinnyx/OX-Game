@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: ox-db
+    environment:
+      POSTGRES_USER: ox_user
+      POSTGRES_PASSWORD: ox_pass
+      POSTGRES_DB: ox
+    ports:
+      - "5434:5432"
+    volumes:
+      - ox_pgdata:/var/lib/postgresql/data
+
+volumes:
+  ox_pgdata:
